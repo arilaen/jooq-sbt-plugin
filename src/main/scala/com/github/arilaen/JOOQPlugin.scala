@@ -32,9 +32,6 @@ object JOOQPlugin extends AutoPlugin {
   val codegen = TaskKey[Unit]("codegen", "Generates code")
 
   object autoImport {
-    // task keys
-
-    // setting keys
 
     val jooqOptions = SettingKey[Seq[(String, String)]]("jooq-options", "JOOQ options.")
 
@@ -50,7 +47,6 @@ object JOOQPlugin extends AutoPlugin {
   }
 
   import autoImport._
-  // exported keys
 
   override lazy val projectSettings:Seq[Setting[_]] = inConfig(JOOQ)(Seq(
 
