@@ -3,13 +3,15 @@
 sbtPlugin := true
 publishMavenStyle := false
 
-version := "1.7.1-SNAPSHOT"
+version := "1.7.2-SNAPSHOT"
 
 organization := "com.github.arilaen"
 
 name := "jooq-sbt-plugin"
 
 libraryDependencies += "com.floreysoft" % "jmte" % "4.0.0"
+
+publishMavenStyle := true
 
 publishTo := {
   val nexus = "https://oss.sonatype.org/"
@@ -19,7 +21,6 @@ publishTo := {
     Some("releases"  at nexus + "service/local/staging/deploy/maven2")
 }
 
-pomIncludeRepository := { _ => false }
 licenses := Seq("Apache 2" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 homepage := Some(url("http://github.com/arilaen/jooq-sbt-plugin"))
 scmInfo := Some(

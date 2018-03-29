@@ -3,14 +3,14 @@ Originally forked from [sean8223's jooq-sbt-plugin][https://github.com/sean8223/
 This is an SBT plugin that provides an interface to the JOOQ code generation tool
 (<http://www.jooq.org>). The plugin is compatible with SBT 1.1.1 and Scala 2.12.5.
 
-The current version of the plugin is *1.7.0*
+The current version of the plugin is *1.7.1*
 
 Quick Start (To be updated)
 ===========
 
 1. Add jooq-sbt-plugin to your `project/plugins.sbt`:
 
-        addSbtPlugin("com.github.arilaen" %% "jooq-sbt-plugin" % "1.7.0")
+        addSbtPlugin("com.github.arilaen" %% "jooq-sbt-plugin" % "1.7.1")
 		
 2. In your `build.sbt`, do the following:
 
