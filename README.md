@@ -5,7 +5,7 @@ This is an SBT plugin that provides an interface to the JOOQ code generation too
 
 The current version of the plugin is *1.7.1*
 
-Quick Start (To be updated)
+Quick Start
 ===========
 
 1. Add jooq-sbt-plugin to your `project/plugins.sbt`:
@@ -20,16 +20,16 @@ Quick Start (To be updated)
 			
    * Add your database driver to your list of `libraryDependencies` with "jooq" scope:
    
-            libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.22" % "jooq"
+            libraryDependencies += "org.postgresql" % "postgresql" % "42.1.4" % "jooq"
 			
    * Configure options for your environment:
    
-             jooqOptions := Seq("jdbc.driver" -> "com.mysql.jdbc.Driver",
-                                "jdbc.url" -> "jdbc:mysql://localhost:3306/fnord",
-                                "jdbc.user" -> "fnord",
-                                "jdbc.password" -> "fnord",
-                                "generator.database.name" -> "org.jooq.util.mysql.MySQLDatabase",
-                                "generator.database.inputSchema" -> "fnord",
+             jooqOptions := Seq("jdbc.driver" -> "com.postgresql.Driver",
+                                "jdbc.url" -> "jdbc:mysql://localhost:5432/my_user",
+                                "jdbc.user" -> "my_user",
+                                "jdbc.password" -> "my_password",
+                                "generator.database.name" -> "org.jooq.util.postgres.PostgresDatabase",
+                                "generator.database.inputSchema" -> "my_schema",
                                 "generator.target.packageName" -> "com.myproject.jooq")
 			 
 			 
@@ -46,7 +46,7 @@ The plugin exposes several settings:
 
             <configuration>
 			   <jdbc>
-			     <driver>com.mysql.jdbc.Driver</driver>
+			     <driver>com.postgresql.Driver</driver>
 			   </jdbc>
             </configuration>
 
