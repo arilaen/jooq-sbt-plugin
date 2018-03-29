@@ -1,25 +1,22 @@
+Originally forked from [sean8223's jooq-sbt-plugin][https://github.com/sean8223/jooq-sbt-plugin], and updated for compatibility with SBT 1.1.1.
+
 This is an SBT plugin that provides an interface to the JOOQ code generation tool
-(<http://www.jooq.org>). The plugin is compatible with SBT 0.11.3+ and Scala 2.9.1+.
+(<http://www.jooq.org>). The plugin is compatible with SBT 1.1.1 and Scala 2.12.5.
 
-The current version of the plugin is *1.6*
+The current version of the plugin is *1.7.0*
 
-
-Quick Start
+Quick Start (To be updated)
 ===========
 
 1. Add jooq-sbt-plugin to your `project/plugins.sbt`:
-        
-        resolvers += "sean8223 Releases" at "https://github.com/sean8223/repository/raw/master/releases"
-        addSbtPlugin("sean8223" %% "jooq-sbt-plugin" % CURRENT_PLUGIN_VERSION) // see above
+
+        addSbtPlugin("com.github.arilaen" %% "jooq-sbt-plugin" % "1.7.0")
 		
 2. In your `build.sbt`, do the following:
 
-   * Inject the plugin settings into your build definition:
+   * Enable the plugin
    
-            seq(jooqSettings:_*)
-			
-     This will also add the JOOQ libraries to your application's compile
-	 `libraryDependencies`.
+            enablePlugins(JOOQPlugin)
 			
    * Add your database driver to your list of `libraryDependencies` with "jooq" scope:
    
@@ -162,14 +159,3 @@ To accomplish this:
 
 Refer to the SBT documentation for more thorough examples of multi-project build files.
 
-
-History
-=======
-
-* 1.0: Initial release
-* 1.1: Fixed error in which `jooqOutputDirectory` was incorrectly being set to `sourceManaged` rather than `sourceManaged in Compile`
-* 1.2: Added `unmanagedJars in Compile` to the `managedClasspath` used by the plugin to facilitate use of proprietary drivers that might not be accessible via Ivy/Maven repos.
-* 1.3: Changed default JOOQ version to 3.2.1 (previous default was 2.6.1)
-* 1.4: Changed default JOOQ version to 3.3.1 (previous default was 3.2.1)
-* 1.5: Added `jooqConfigFile` option to allow for handcrafted JOOQ configurations beyond what can be specified in `jooqOptions`
-* 1.6: Merged pull request #14 to support templatization of JOOQ config files -- thanks to [triplec1988](https://github.com/triplec1988) for this enhancement!
