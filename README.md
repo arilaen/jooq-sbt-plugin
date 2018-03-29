@@ -1,4 +1,4 @@
-Originally forked from [sean8223's jooq-sbt-plugin][https://github.com/sean8223/jooq-sbt-plugin], and updated for compatibility with SBT 1.1.1.
+Originally forked from [sean8223's jooq-sbt-plugin](https://github.com/sean8223/jooq-sbt-plugin), and updated for compatibility with SBT 1.1.1.
 
 This is an SBT plugin that provides an interface to the JOOQ code generation tool
 (<http://www.jooq.org>). The plugin is compatible with SBT 1.1.1 and Scala 2.12.5.
